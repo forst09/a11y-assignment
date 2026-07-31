@@ -954,6 +954,10 @@ fieldset legend {
   display: flex;
   justify-content: center;
 }
+.product-video_iframe {
+  width: 100%;
+  border: none;
+}
 
 .products-grid {
   display: grid;
