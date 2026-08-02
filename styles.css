@@ -750,6 +750,20 @@ fieldset legend {
   border-radius: 2px;
 }
 
+.modal__close {
+  position: absolute;
+  display: flex;
+  width: 24px;
+  right: 25px;
+  top: 25px;
+}
+
+.modal__close::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+}
+
 .show-modal {
   display: block;
 }
