@@ -976,6 +976,17 @@ fieldset legend {
   column-gap: 60px;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 @media (max-width: 1200px) {
   .products-grid {
     column-gap: 30px;
