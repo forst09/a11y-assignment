@@ -566,7 +566,10 @@
 			</div>
 		</footer>
 	</div>
-	<div class="modal">
+	<div role="dialog"
+		 aria-modal="true"
+		 aria-labelledby="modalTitle"
+		 class="modal">
 		<div class="modal-backdrop">
 			<div class="modal-body size-guide">
 				<button type="button"
@@ -584,7 +587,8 @@
 							  stroke-linejoin="round" />
 					</svg>
 				</button>
-				<span class="heading-2">Size guide</span>
+				<span id="modalTitle"
+					  class="heading-2">Size guide</span>
 				<p>Some description about the sizes</p>
 				<table class="size-guide__table">
 					<tr>
