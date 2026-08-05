@@ -36,6 +36,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const lockScroll = () => {
+    document.body.classList.add('lock-scroll');
+  }
+
+  const unlockScroll = () => {
+    document.body.classList.remove('lock-scroll');
+  }
+
   const mainWrap = document.querySelector('.main-grid');
 
   let currentEscHandler = null;
@@ -47,6 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const showModal = (modalWindow, modalClose, modalTarget) => {
+    lockScroll();
     activeModalTarget = modalTarget;
     mainWrap.setAttribute('inert', '');
     modalWindow.classList.add('show-modal');
@@ -57,6 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const closeModal = (modalWindow) => {
+    unlockScroll();
     mainWrap.removeAttribute('inert');
     modalWindow.classList.remove('show-modal');
     activeModalTarget.focus();

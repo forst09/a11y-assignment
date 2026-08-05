@@ -52,6 +52,10 @@ ol {
   padding: 0;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   height: 100%;
@@ -114,6 +118,10 @@ fieldset legend {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.lock-scroll {
+  overflow: clip;
 }
 
 .container {
