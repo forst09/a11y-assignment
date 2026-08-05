@@ -37,11 +37,23 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const mainWrap = document.querySelector('.main-grid');
+
+  let currentEscHandler = null;
+
+  const handleEscClick = (e, modalWindow) => {
+    if (e.code === 'Escape') {
+      closeModal(modalWindow);
+    }
+  }
+
   const showModal = (modalWindow, modalClose, modalTarget) => {
     activeModalTarget = modalTarget;
     mainWrap.setAttribute('inert', '');
     modalWindow.classList.add('show-modal');
     modalClose.focus();
+
+    currentEscHandler = (e) => { handleEscClick(e, modalWindow) }
+    window.addEventListener('keyup', currentEscHandler);
   }
 
   const closeModal = (modalWindow) => {
@@ -49,6 +61,9 @@ window.addEventListener("DOMContentLoaded", () => {
     modalWindow.classList.remove('show-modal');
     activeModalTarget.focus();
     activeModalTarget = null;
+
+    window.removeEventListener('keyup', currentEscHandler);
+    currentEscHandler = null;
   }
 
   const modalTarget = document.querySelectorAll('.modal-target');
